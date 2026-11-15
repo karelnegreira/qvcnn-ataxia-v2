@@ -1,0 +1,5 @@
+subject_id,path,label,split,site
+subject_001,data/processed/subject_001.nii.gz,0,train,site_a
+subject_002,data/processed/subject_002.nii.gz,1,train,site_a
+subject_003,data/processed/subject_003.nii.gz,0,val,site_b
+subject_004,data/processed/subject_004.nii.gz,1,test,site_c
