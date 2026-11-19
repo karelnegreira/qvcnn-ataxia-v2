@@ -38,7 +38,7 @@ class AtaxiaMRIDataset(Dataset):
             if row['split'] == split
         ]
 
-        if not self.records:
+        if not self.record:
             raise ValueError(
                 f"No MRI records found for split: {split}"
             )

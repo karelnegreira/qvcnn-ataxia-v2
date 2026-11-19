@@ -65,3 +65,10 @@ def run_experiment(manifest_path, quaternion=False, epochs=20):
         )
 
     return model
+
+if __name__=="__main__":
+    model = run_experiment(
+        manifest_path="data/manifest.csv", 
+        quaternion=False, 
+        epochs=20
+    )
