@@ -1,3 +1,4 @@
+from pathlib import Path
 from mri_experiment import AtaxiaMRIDataset
 import torch
 from torch import nn
@@ -31,7 +32,7 @@ def train_one_epoch(model, loader, optimizer, criterion, device):
 
     return total_loss / total_samples
 
-@torch_no_grad()
+@torch.no_grad()
 def evaluate(model, loader, criterion, device):
     model.eval()
 
@@ -115,12 +116,12 @@ def run_experiment_v2(
 
     train_labels = {
         int(row["label"])
-        for row in val_loader.dataset.records
+        for row in val_loader.dataset.record
     }
 
     val_labels = {
         int(row["label"])
-        for row in val_loader.dataset.records
+        for row in val_loader.dataset.record
     }
 
     if train_labels != {0, 1} or val_labels != {0, 1}:
@@ -230,5 +231,5 @@ if __name__=="__main__":
         manifest_path="data/manifest.csv",
         quaternion=True, 
         epochs=3, 
-        smoke_test=False
+        smoke_test=True
     )
